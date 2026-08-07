@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Reveal from "../components/Reveal";
+import appPhoto from "../assets/media/app-mockup.webp";
 
 const tabs = [
   {
@@ -55,7 +56,14 @@ export default function AppDemo() {
           </div>
         </Reveal>
 
-        <Reveal className="mx-auto flex justify-center">
+        <Reveal className="relative mx-auto flex justify-center">
+          <div className="absolute -inset-10 -z-10 overflow-hidden rounded-[var(--radius-xl)] sm:-inset-16" aria-hidden="true">
+            <img src={appPhoto} alt="" className="h-full w-full object-cover opacity-50 blur-[2px]" />
+            <div
+              className="absolute inset-0"
+              style={{ background: "radial-gradient(55% 55% at 50% 50%, transparent 10%, var(--surface-base) 88%)" }}
+            />
+          </div>
           <div className="relative flex h-[520px] w-[260px] flex-col overflow-hidden rounded-[2.5rem] border-4 border-[var(--border-strong)] bg-[var(--surface-raised)] p-3 shadow-2xl">
             <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-[var(--border-strong)]" />
             <div className="flex flex-1 flex-col items-center justify-center gap-4 rounded-[1.75rem] bg-[var(--surface-base)] p-6 text-center">
