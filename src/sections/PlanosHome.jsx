@@ -8,14 +8,19 @@ export default function PlanosHome() {
     <section id="planos" className="px-5 py-20 md:px-8">
       <div className="mx-auto max-w-[1280px]">
         <Reveal className="text-center">
-          <h2 className="text-[var(--text-2xl)] font-extrabold">Planos e preços</h2>
+          <span className="font-[var(--font-data)] text-[var(--text-xs)] font-semibold uppercase tracking-[0.12em] text-[var(--text-signal)]">
+            Planos e preços
+          </span>
+          <h2 className="mt-3 text-[var(--text-2xl)] font-extrabold">
+            Proteção que cabe no seu <span className="text-[var(--text-signal)]">bolso</span>
+          </h2>
           <p className="mx-auto mt-2 max-w-lg text-[var(--text-secondary)]">
             Valores exemplificativos, faixa real depende do veículo. Compare em detalhe na página de planos.
           </p>
         </Reveal>
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
           {plans.map((plan, i) => (
-            <Reveal key={plan.name} style={{ transitionDelay: `${i * 80}ms` }}>
+            <Reveal key={plan.name} style={{ transitionDelay: `${i * 80}ms` }} className="h-full">
               <PricingCard plan={plan} highlight={plan.highlight} />
             </Reveal>
           ))}
