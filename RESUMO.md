@@ -5,8 +5,8 @@
 ## Status atual (2026-08-06)
 
 - Projeto iniciado: scaffold React + Vite.
-- Repositório GitHub: criado (conta DevGarb).
-- GitHub Pages: configurado via GitHub Actions (`.github/workflows/deploy.yml`), deploy automático a cada push na branch `main`.
+- Repositório GitHub: https://github.com/DevGarb/rmais (público)
+- GitHub Pages: https://devgarb.github.io/rmais/ (build via GitHub Actions, deploy automático a cada push na branch `main`)
 - Pasta local: `C:\Users\K0NF14\Desktop\rmais`.
 
 ## Stack
@@ -18,9 +18,7 @@
 ## Próximos passos
 
 - Definir conteúdo/funcionalidade real do rmais (ainda não especificado).
-- Primeiro commit e push.
-- Confirmar Pages ativo e URL funcionando.
 
 ## Histórico
 
-- 2026-08-06: Ambiente criado (gh CLI instalado e autenticado, projeto Vite scaffolded, workflow de deploy configurado).
+- 2026-08-06: Ambiente criado (gh CLI instalado e autenticado como DevGarb, projeto Vite+React scaffolded em `C:\Users\K0NF14\Desktop\rmais`, workflow de deploy configurado, repositório https://github.com/DevGarb/rmais criado e publicado, GitHub Pages ativado e testado com sucesso (HTTP 200) em https://devgarb.github.io/rmais/).
