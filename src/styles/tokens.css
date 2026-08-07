@@ -1,0 +1,150 @@
+/*
+  RasterMais — Design Tokens (camada 1: primitivos / camada 2: semânticos)
+  Derivado da logomarca (ver docs/BRAND.md, changelog de derivação).
+  Espelhado em /tokens/brand.tokens.json — trocar de marca = trocar os dois arquivos.
+*/
+
+@import "tailwindcss";
+
+@theme {
+  /* ---------- Camada 1: Primitivos ---------- */
+
+  /* Neutro (âncora: preto quente do wordmark #201E1E) */
+  --color-neutral-0: hsl(20 8% 100%);
+  --color-neutral-50: hsl(20 12% 97%);
+  --color-neutral-100: hsl(20 10% 93%);
+  --color-neutral-150: hsl(20 8% 88%);
+  --color-neutral-200: hsl(20 6% 78%);
+  --color-neutral-300: hsl(20 4% 64%);
+  --color-neutral-400: hsl(240 1% 51%); /* = #808082, próximo do cinza da faixa do logo */
+  --color-neutral-500: hsl(240 1% 38%); /* = #606062, cinza exato do logo */
+  --color-neutral-600: hsl(20 5% 28%);
+  --color-neutral-700: hsl(20 6% 20%);
+  --color-neutral-800: hsl(20 7% 15%);
+  --color-neutral-900: hsl(20 8% 12%); /* ≈ #201E1E, preto exato do wordmark */
+  --color-neutral-950: hsl(20 9% 8%);
+  --color-neutral-1000: hsl(20 10% 4%);
+
+  /* Sinal — laranja exato do pin/wordmark #F58634 (hue 25.5 sat 90% L 58%) */
+  --color-signal-50: hsl(25 90% 96%);
+  --color-signal-100: hsl(25 90% 90%);
+  --color-signal-200: hsl(25 90% 81%);
+  --color-signal-300: hsl(25 90% 72%);
+  --color-signal-400: hsl(25 90% 65%);
+  --color-signal-500: hsl(25 90% 58%); /* = #F58634, cor oficial do logo — não alterar */
+  --color-signal-600: hsl(24 85% 49%);
+  --color-signal-700: hsl(23 82% 40%);
+  --color-signal-800: hsl(22 78% 31%);
+  --color-signal-900: hsl(21 75% 22%);
+
+  /* Funcionais — deslocadas do hue do sinal (25°) para não colidir */
+  --color-success-500: hsl(152 65% 40%);
+  --color-success-400: hsl(152 55% 55%);
+  --color-warning-500: hsl(45 90% 50%);
+  --color-warning-400: hsl(45 90% 65%);
+  --color-error-500: hsl(4 78% 52%);
+  --color-error-400: hsl(4 78% 65%);
+  --color-info-500: hsl(205 80% 50%);
+  --color-info-400: hsl(205 80% 65%);
+
+  /* Canal — WhatsApp, sempre fora da paleta de marca */
+  --color-channel-500: hsl(142 70% 42%);
+  --color-channel-600: hsl(142 70% 35%);
+
+  /* Alfas de sinal (glow/halo/borda) */
+  --color-signal-a07: hsl(25 90% 58% / 0.07);
+  --color-signal-a10: hsl(25 90% 58% / 0.10);
+  --color-signal-a14: hsl(25 90% 58% / 0.14);
+  --color-signal-a18: hsl(25 90% 58% / 0.18);
+  --color-signal-a22: hsl(25 90% 58% / 0.22);
+  --color-signal-a32: hsl(25 90% 58% / 0.32);
+  --color-signal-a40: hsl(25 90% 58% / 0.40);
+
+  /* Tipografia — DISPLAY parente do wordmark (geométrica arredondada) */
+  --font-display: "Poppins", "Segoe UI", sans-serif;
+  --font-text: "Inter", "Segoe UI", sans-serif;
+  --font-data: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Escala fluida (8 degraus) */
+  --text-xs: clamp(0.75rem, 0.71rem + 0.2vw, 0.8rem);
+  --text-sm: clamp(0.875rem, 0.83rem + 0.22vw, 0.95rem);
+  --text-base: clamp(1rem, 0.94rem + 0.28vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1.03rem + 0.42vw, 1.375rem);
+  --text-xl: clamp(1.375rem, 1.2rem + 0.7vw, 1.875rem);
+  --text-2xl: clamp(1.75rem, 1.45rem + 1.2vw, 2.5rem);
+  --text-3xl: clamp(2.25rem, 1.7rem + 2.2vw, 3.5rem);
+  --text-4xl: clamp(2.75rem, 1.9rem + 3.6vw, 5rem);
+
+  /* Raio — âncora na geometria redonda do pin (sem chanfro: ver changelog) */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-full: 999px;
+
+  /* Movimento */
+  --duration-instant: 100ms;
+  --duration-fast: 160ms;
+  --duration-base: 240ms;
+  --duration-slow: 400ms;
+  --duration-deliberate: 700ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-entrance: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --ease-lock: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------- Camada 2: Semânticos ---------- */
+/* Tema escuro operacional = default (o logo tem variante clara/transparente, funciona sobre fundo escuro) */
+:root {
+  --surface-base: var(--color-neutral-1000);
+  --surface-raised: var(--color-neutral-900);
+  --surface-overlay: hsl(20 9% 8% / 0.92);
+  --border-subtle: hsl(20 8% 100% / 0.08);
+  --border-strong: hsl(20 8% 100% / 0.16);
+  --border-signal: var(--color-signal-500);
+  --text-primary: var(--color-neutral-50);
+  --text-secondary: var(--color-neutral-300);
+  --text-tertiary: var(--color-neutral-400);
+  --text-signal: var(--color-signal-500); /* AA em texto pequeno: 7.72:1 */
+  --signal-ui: var(--color-signal-500); /* bordas, ícones, headline grande — não validar como texto pequeno */
+  --action-primary-bg: var(--color-signal-500);
+  --action-primary-fg: var(--color-neutral-1000);
+  --action-primary-hover: var(--color-signal-400);
+  --action-primary-active: var(--color-signal-600);
+  --action-ghost-border: var(--border-strong);
+  --action-ghost-fg: var(--text-primary);
+  --shadow-elevation: none; /* dark: usa borda luminosa + glow, não sombra preta */
+}
+
+/* Tema claro institucional = área logada / gestão de frota */
+[data-theme="light"] {
+  --surface-base: var(--color-neutral-0);
+  --surface-raised: var(--color-neutral-50);
+  --surface-overlay: hsl(20 12% 97% / 0.92);
+  --border-subtle: hsl(20 8% 12% / 0.08);
+  --border-strong: hsl(20 8% 12% / 0.14);
+  --border-signal: var(--color-signal-600);
+  --text-primary: var(--color-neutral-900);
+  --text-secondary: var(--color-neutral-600);
+  --text-tertiary: var(--color-neutral-400);
+  --text-signal: var(--color-signal-700); /* PROIBIDO usar signal-600 em texto pequeno claro: 3.29:1, reprova AA. 700 = 4.87:1 */
+  --signal-ui: var(--color-signal-600); /* bordas, ícones, headline grande (>=24px/AA-large) */
+  --action-primary-bg: var(--color-signal-600);
+  --action-primary-fg: var(--color-neutral-0);
+  --action-primary-hover: var(--color-signal-500);
+  --action-primary-active: var(--color-signal-700);
+  --action-ghost-border: var(--border-strong);
+  --action-ghost-fg: var(--text-primary);
+  --shadow-elevation: 0 4px 16px hsl(20 8% 12% / 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
