@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/brand/logo-footer.webp";
 
 const columns = [
   {
@@ -26,11 +27,8 @@ export default function Footer() {
     <footer id="contato" className="border-t border-[var(--border-subtle)] bg-[var(--surface-raised)]">
       <div className="mx-auto grid max-w-[1280px] grid-cols-2 gap-10 px-5 py-14 md:grid-cols-4 md:px-8">
         <div className="col-span-2">
-          <span className="font-[var(--font-display)] text-[1.4rem] font-extrabold">
-            <span className="text-[var(--text-primary)]">Raster</span>
-            <span className="text-[var(--text-signal)]">Mais</span>
-          </span>
-          <p className="mt-3 max-w-xs text-[var(--text-sm)] text-[var(--text-secondary)]">
+          <img src={logo} alt="RasterMais Rastreamento Veicular" className="h-11 w-auto" />
+          <p className="mt-4 max-w-xs text-[var(--text-sm)] text-[var(--text-secondary)]">
             Rastreamento e proteção veicular com operação própria: central 24h, equipe tática de campo e app
             proprietário.
           </p>

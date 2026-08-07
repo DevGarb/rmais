@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
+import logo from "../assets/brand/logo-navbar.webp";
 
 const links = [
   { to: "/#como-funciona", label: "Como funciona" },
@@ -27,11 +28,8 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-[1280px] items-center justify-between px-5 py-4 md:px-8">
-        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="font-[var(--font-display)] text-[1.4rem] font-extrabold">
-            <span className="text-[var(--text-primary)]">Raster</span>
-            <span className="text-[var(--text-signal)]">Mais</span>
-          </span>
+        <Link to="/" className="flex items-center" onClick={() => setOpen(false)} aria-label="RasterMais, página inicial">
+          <img src={logo} alt="RasterMais" className="h-8 w-auto md:h-9" />
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
