@@ -14,6 +14,7 @@
 - Componentes: Navbar (scroll state + menu mobile full-screen), Footer, Button (3 variantes x 7 estados via CSS), EyebrowPill, FAQAccordion, PricingCard, Reveal (scroll-reveal com IntersectionObserver, respeita `prefers-reduced-motion`), WhatsAppFAB, CookieBanner (LGPD, recusa em 1 clique).
 - Simulador de proteção por placa: funcional, mock local determinístico (não consulta FIPE real), com disclaimer visível.
 - Testado localmente via `npm run build` + `npm run preview` + Chrome (simulador, Planos, Garantia, navbar) — sem erros de console.
+- Mídia (parte 1.2): hero image gerada via Higgsfield (`z_image`, único crédito disponível no plano free) em `src/assets/media/hero-night-tracking.webp` (65KB), pin de luz laranja no teto do carro ecoando o pin do logo. Ícones de Features e Personas viraram SVG inline sem custo (`src/components/icons.jsx`) em vez de fotos geradas — decisão do usuário por falta de créditos Higgsfield. Depoimentos.jsx permanece placeholder honesto — decidido não gerar "depoimentos" fake com IA fingindo ser cliente real (seria review fabricada).
 
 ## Decisões de segurança/qualidade tomadas
 
@@ -36,7 +37,8 @@
 | Item | RICE | Nota |
 | --- | --- | --- |
 | Simulador por placa com FIPE real (hoje é mock local) | Alto | Maior alavanca de conversão do briefing original |
-| Depoimentos reais em vídeo | Médio-alto | Prova social — estrutura já pronta em `Depoimentos.jsx` |
+| Depoimentos reais em vídeo | Médio-alto | Prova social — estrutura já pronta em `Depoimentos.jsx`. Nunca gerar depoimento fake por IA — é review fabricada |
+| Fotografia de pessoas reais para Personas/hero adicional (Higgsfield) | Baixo-médio | Hoje só 1 crédito no plano free (usado na hero). Fazer upgrade de plano pra gerar as 4 personas + mockups adicionais |
 | SLA visual de resposta (linha do tempo com dado real de operação) | Médio | `ComoFunciona.jsx` já tem a estrutura, falta dado auditado |
 | Toggle de tema claro/escuro exposto na UI (hoje só via `data-theme` programático) | Médio | Tema claro é o institucional/área logada |
 | Mapa de cobertura real (lojas geolocalizadas) | Médio | `Cobertura.jsx` é placeholder |
