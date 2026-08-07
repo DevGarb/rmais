@@ -22,6 +22,7 @@
 - **Bug crítico corrigido:** `p { margin: 0 }`, `h1-h4 { margin: 0 }` etc. em `src/index.css` estavam fora de qualquer `@layer`, e por CSS Cascade Layers uma regra sem layer sempre vence uma regra COM layer (Tailwind emite utilities em `@layer utilities`), não importa especificidade. Isso quebrava silenciosamente `mx-auto`/`mt-*` em qualquer `<p>` ou `<h1-h4>` — os subtítulos de Personas e Planos apareciam colados na esquerda em vez de centralizados. Corrigido envolvendo essas regras em `@layer base { ... }`. **Atenção pra próxima sessão:** qualquer novo reset de elemento HTML em index.css tem que ir dentro de `@layer base`, nunca solto.
 - Simulador redesenhado: fundo com radar sweep animado (conic-gradient rotativo) + dot-grid, ícone de pin dentro do input, estado de "Analisando..." com delay de 900ms antes do resultado (`useCountUp` hook anima os números de FIPE/mensalidade subindo), badge "✓ Encontrado", borda com glow laranja permanente na seção.
 - Features redesenhado: número de índice grande (01-06) como marca d'água no canto, hover levanta o card + brilho radial + ícone preenche laranja + linha de destaque embaixo.
+- GarantiaTeaser ganhou background (foto de metal escovado com luz laranja, gerada via davinci.ai), opacidade 35% + gradiente escuro por cima pra manter contraste do texto.
 
 ## Decisões de segurança/qualidade tomadas
 

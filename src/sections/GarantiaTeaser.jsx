@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
+import bgTexture from "../assets/media/garantia-bg.webp";
 
 const bullets = [
   "Regulamento completo publicado antes da contratação",
@@ -55,13 +56,27 @@ function SeloBadge() {
 export default function GarantiaTeaser() {
   return (
     <section className="px-5 py-20 md:px-8">
-      <Reveal className="relative mx-auto max-w-[1280px] overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border-signal)] bg-[var(--color-signal-a07)]">
+      <Reveal className="relative mx-auto max-w-[1280px] overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border-signal)] bg-[var(--surface-raised)]">
+        <img
+          src={bgTexture}
+          alt=""
+          loading="lazy"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-35"
+        />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(115deg, var(--surface-raised) 15%, var(--color-signal-a07) 55%, var(--surface-raised) 100%)",
+          }}
+          aria-hidden="true"
+        />
         <div
           className="pointer-events-none absolute inset-x-0 top-0 h-1"
           style={{ background: "linear-gradient(90deg, transparent, var(--color-signal-500), transparent)" }}
           aria-hidden="true"
         />
-        <div className="grid grid-cols-1 items-center gap-10 p-10 md:grid-cols-[1fr_auto] md:p-16">
+        <div className="relative grid grid-cols-1 items-center gap-10 p-10 md:grid-cols-[1fr_auto] md:p-16">
           <div>
             <span className="rounded-[var(--radius-full)] bg-[var(--color-signal-500)] px-4 py-1.5 font-[var(--font-data)] text-[var(--text-xs)] font-bold uppercase tracking-[0.08em] text-[var(--surface-base)]">
               GarantiaMais
