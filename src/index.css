@@ -8,6 +8,43 @@
 @import "@fontsource/jetbrains-mono/500.css";
 @import "./styles/tokens.css";
 
+/*
+  Regras de elemento (body/h1-h4/p/a/button) precisam ficar dentro de @layer base:
+  Tailwind v4 emite utilities (mx-auto, mt-*, etc.) em @layer utilities, e por Cascade
+  Layers qualquer regra SEM layer vence qualquer regra COM layer, não importa a
+  especificidade — sem isso, "p { margin: 0 }" aqui embaixo quebrava mx-auto/mt-* em <p>.
+*/
+@layer base {
+  body {
+    margin: 0;
+    background: var(--surface-base);
+    color: var(--text-primary);
+    font-family: var(--font-text);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  button {
+    font-family: inherit;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -17,37 +54,8 @@ html {
   color-scheme: dark;
 }
 
-body {
-  margin: 0;
-  background: var(--surface-base);
-  color: var(--text-primary);
-  font-family: var(--font-text);
-  font-size: var(--text-base);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 [data-theme="light"] {
   color-scheme: light;
-}
-
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  margin: 0;
-  color: var(--text-primary);
-}
-
-p {
-  margin: 0;
-}
-
-a {
-  color: inherit;
-}
-
-button {
-  font-family: inherit;
 }
 
 :focus-visible {
