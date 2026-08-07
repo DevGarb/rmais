@@ -1,9 +1,12 @@
 import Reveal from "../components/Reveal";
+import SectionDivider from "../components/SectionDivider";
 import coberturaPhoto from "../assets/media/cobertura-bg.webp";
 
 export default function Cobertura() {
   return (
-    <section id="cobertura" className="bg-[var(--surface-raised)] px-5 py-20 md:px-8">
+    <section id="cobertura" className="relative bg-[var(--surface-raised)] px-5 py-20 md:px-8">
+      <SectionDivider position="top" />
+      <SectionDivider position="bottom" />
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
           <h2 className="text-[var(--text-2xl)] font-extrabold">Cobertura e lojas</h2>

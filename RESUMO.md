@@ -24,8 +24,10 @@
 - Features redesenhado: número de índice grande (01-06) como marca d'água no canto, hover levanta o card + brilho radial + ícone preenche laranja + linha de destaque embaixo.
 - GarantiaTeaser ganhou background (foto de metal escovado com luz laranja, gerada via davinci.ai), opacidade 35% + gradiente escuro por cima pra manter contraste do texto.
 - Mais 3 imagens conectadas (davinci.ai): AppDemo ganhou foto de app real (mão segurando celular com mapa) como glow ambiente ao redor do phone mockup; Cobertura ganhou foto aérea noturna de cidade com pins laranja sobrepostos; Depoimentos ganhou 3 fotos reais de pessoas gravando (cards "Prévia do formato", com aviso explícito "Ilustrativa — não é um cliente real" em cada — não são depoimentos fake, é só mostrar o formato). Grid 3/3 preenchido, sem placeholder sobrando.
-- Pendência: usuário pediu app mockup só do aparelho (sem mão segurando) — prompt corrigido passado, aguardando gerar. `src/sections/AppDemo.jsx` hoje usa a versão com mão (`app-mockup.webp`) até a nova chegar.
-- Ordem da Home trocada: Personas ("Pra quem é a RasterMais") agora vem logo após a Hero; StatBar (pilares de prova) foi pra depois de ComoFunciona, antes de Planos.
+- App mockup trocado pela versão sem mão (só o aparelho) — `app-mockup.webp` atualizado.
+- Novo componente `src/components/SectionDivider.jsx`: linha neon fina, começa no centro e esmaece antes de chegar nas bordas (`linear-gradient` + `box-shadow` glow). Aplicado no topo/base das 4 seções com fundo `surface-raised` (Personas, StatBar, Depoimentos, Cobertura) pra marcar a costura entre preto e cinza — trocou a antiga `border-y` reta e sem graça do StatBar.
+- Ordem da Home trocada de novo: Hero → Personas → Simulador → GarantiaTeaser → ComoFunciona → StatBar → Planos → Depoimentos → AppDemo → Cobertura → FAQ → CTA final.
+- **Features ("Capacidades") desativada da interface** a pedido do usuário — é teste, quer ver o site sem essa seção. Componente continua intacto em `src/sections/Features.jsx`, só não é importado/renderizado em `Home.jsx`. Pra reativar: importar e adicionar `<Features />` de volta.
 
 ## Decisões de segurança/qualidade tomadas
 

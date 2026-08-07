@@ -1,4 +1,5 @@
 import Reveal from "../components/Reveal";
+import SectionDivider from "../components/SectionDivider";
 import { IconHeadset, IconShieldTeam, IconPin, IconBanknote } from "../components/icons";
 
 const pillars = [
@@ -10,7 +11,9 @@ const pillars = [
 
 export default function StatBar() {
   return (
-    <section className="border-y border-[var(--border-subtle)] bg-[var(--surface-raised)] px-5 py-14 md:px-8">
+    <section className="relative bg-[var(--surface-raised)] px-5 py-14 md:px-8">
+      <SectionDivider position="top" />
+      <SectionDivider position="bottom" />
       <div className="mx-auto max-w-[1280px]">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((p, i) => (

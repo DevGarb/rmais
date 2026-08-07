@@ -1,4 +1,5 @@
 import Reveal from "../components/Reveal";
+import SectionDivider from "../components/SectionDivider";
 import { IconSteeringWheel, IconHouseHeart, IconCompass, IconTruckFleet } from "../components/icons";
 import fotoMotorista from "../assets/media/persona-motorista.webp";
 import fotoFamilia from "../assets/media/persona-familia.webp";
@@ -42,7 +43,9 @@ const personas = [
 
 export default function Personas() {
   return (
-    <section className="bg-[var(--surface-raised)] px-5 py-20 md:px-8">
+    <section className="relative bg-[var(--surface-raised)] px-5 py-20 md:px-8">
+      <SectionDivider position="top" />
+      <SectionDivider position="bottom" />
       <div className="mx-auto max-w-[1280px]">
         <Reveal className="text-center">
           <h2 className="text-[var(--text-2xl)] font-extrabold">

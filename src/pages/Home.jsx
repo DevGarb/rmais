@@ -1,7 +1,8 @@
 import Hero from "../sections/Hero";
 import StatBar from "../sections/StatBar";
 import Simulador from "../sections/Simulador";
-import Features from "../sections/Features";
+// Features ("Capacidades") desativada da interface a pedido — componente mantido em
+// src/sections/Features.jsx para religar depois, só não é renderizada aqui.
 import ComoFunciona from "../sections/ComoFunciona";
 import Personas from "../sections/Personas";
 import PlanosHome from "../sections/PlanosHome";
@@ -18,11 +19,10 @@ export default function Home() {
       <Hero />
       <Personas />
       <Simulador />
-      <Features />
+      <GarantiaTeaser />
       <ComoFunciona />
       <StatBar />
       <PlanosHome />
-      <GarantiaTeaser />
       <Depoimentos />
       <AppDemo />
       <Cobertura />

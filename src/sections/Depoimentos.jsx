@@ -1,4 +1,5 @@
 import Reveal from "../components/Reveal";
+import SectionDivider from "../components/SectionDivider";
 import photoHomem from "../assets/media/depoimentos-bg.webp";
 import photoMulher from "../assets/media/depoimentos-mulher.webp";
 import photoHomem2 from "../assets/media/depoimentos-homem2.webp";
@@ -36,7 +37,9 @@ function PreviewCard({ photo, delay }) {
 
 export default function Depoimentos() {
   return (
-    <section className="bg-[var(--surface-raised)] px-5 py-20 md:px-8">
+    <section className="relative bg-[var(--surface-raised)] px-5 py-20 md:px-8">
+      <SectionDivider position="top" />
+      <SectionDivider position="bottom" />
       <div className="mx-auto max-w-[1280px]">
         <Reveal>
           <h2 className="text-[var(--text-2xl)] font-extrabold">Depoimentos de clientes</h2>
