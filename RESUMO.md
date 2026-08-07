@@ -23,7 +23,9 @@
 - Simulador redesenhado: fundo com radar sweep animado (conic-gradient rotativo) + dot-grid, ícone de pin dentro do input, estado de "Analisando..." com delay de 900ms antes do resultado (`useCountUp` hook anima os números de FIPE/mensalidade subindo), badge "✓ Encontrado", borda com glow laranja permanente na seção.
 - Features redesenhado: número de índice grande (01-06) como marca d'água no canto, hover levanta o card + brilho radial + ícone preenche laranja + linha de destaque embaixo.
 - GarantiaTeaser ganhou background (foto de metal escovado com luz laranja, gerada via davinci.ai), opacidade 35% + gradiente escuro por cima pra manter contraste do texto.
-- Mais 3 imagens conectadas (davinci.ai): AppDemo ganhou foto de app real (mão segurando celular com mapa) como glow ambiente ao redor do phone mockup; Cobertura ganhou foto aérea noturna de cidade com pins laranja sobrepostos; Depoimentos ganhou 1 foto real de pessoa gravando (card "Prévia do formato", com aviso explícito "Ilustrativa — não é um cliente real" — não é depoimento fake, é só mostrar o formato).
+- Mais 3 imagens conectadas (davinci.ai): AppDemo ganhou foto de app real (mão segurando celular com mapa) como glow ambiente ao redor do phone mockup; Cobertura ganhou foto aérea noturna de cidade com pins laranja sobrepostos; Depoimentos ganhou 3 fotos reais de pessoas gravando (cards "Prévia do formato", com aviso explícito "Ilustrativa — não é um cliente real" em cada — não são depoimentos fake, é só mostrar o formato). Grid 3/3 preenchido, sem placeholder sobrando.
+- Pendência: usuário pediu app mockup só do aparelho (sem mão segurando) — prompt corrigido passado, aguardando gerar. `src/sections/AppDemo.jsx` hoje usa a versão com mão (`app-mockup.webp`) até a nova chegar.
+- Ordem da Home trocada: Personas ("Pra quem é a RasterMais") agora vem logo após a Hero; StatBar (pilares de prova) foi pra depois de ComoFunciona, antes de Planos.
 
 ## Decisões de segurança/qualidade tomadas
 

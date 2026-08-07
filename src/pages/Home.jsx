@@ -16,11 +16,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <StatBar />
+      <Personas />
       <Simulador />
       <Features />
       <ComoFunciona />
-      <Personas />
+      <StatBar />
       <PlanosHome />
       <GarantiaTeaser />
       <Depoimentos />

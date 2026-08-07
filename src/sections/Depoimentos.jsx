@@ -1,5 +1,38 @@
 import Reveal from "../components/Reveal";
-import recordingPhoto from "../assets/media/depoimentos-bg.webp";
+import photoHomem from "../assets/media/depoimentos-bg.webp";
+import photoMulher from "../assets/media/depoimentos-mulher.webp";
+import photoHomem2 from "../assets/media/depoimentos-homem2.webp";
+
+const previews = [photoHomem, photoMulher, photoHomem2];
+
+function PreviewCard({ photo, delay }) {
+  return (
+    <Reveal
+      style={{ transitionDelay: `${delay}ms` }}
+      className="group relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border-subtle)]"
+    >
+      <img src={photo} alt="" loading="lazy" className="h-full w-full object-cover" />
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{ background: "linear-gradient(0deg, var(--color-neutral-1000) 5%, transparent 55%)" }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="flex h-14 w-14 items-center justify-center rounded-full border border-[var(--border-signal)] bg-[var(--surface-overlay)] text-[var(--text-signal)] backdrop-blur transition-transform duration-[var(--duration-base)] group-hover:scale-110">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M6 4l10 6-10 6V4z" />
+          </svg>
+        </span>
+      </div>
+      <span className="absolute left-3 top-3 rounded-[var(--radius-full)] bg-[var(--color-signal-500)] px-3 py-1 font-[var(--font-data)] text-[var(--text-xs)] font-bold uppercase tracking-[0.06em] text-[var(--surface-base)]">
+        Prévia do formato
+      </span>
+      <p className="absolute bottom-3 left-3 right-3 text-[var(--text-xs)] text-[var(--text-tertiary)]">
+        Ilustrativa — não é um cliente real.
+      </p>
+    </Reveal>
+  );
+}
 
 export default function Depoimentos() {
   return (
@@ -13,35 +46,8 @@ export default function Depoimentos() {
           </p>
         </Reveal>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-          <Reveal className="group relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border-subtle)]">
-            <img src={recordingPhoto} alt="" loading="lazy" className="h-full w-full object-cover" />
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{ background: "linear-gradient(0deg, var(--color-neutral-1000) 5%, transparent 55%)" }}
-              aria-hidden="true"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="flex h-14 w-14 items-center justify-center rounded-full border border-[var(--border-signal)] bg-[var(--surface-overlay)] text-[var(--text-signal)] backdrop-blur transition-transform duration-[var(--duration-base)] group-hover:scale-110">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M6 4l10 6-10 6V4z" />
-                </svg>
-              </span>
-            </div>
-            <span className="absolute left-3 top-3 rounded-[var(--radius-full)] bg-[var(--color-signal-500)] px-3 py-1 font-[var(--font-data)] text-[var(--text-xs)] font-bold uppercase tracking-[0.06em] text-[var(--surface-base)]">
-              Prévia do formato
-            </span>
-            <p className="absolute bottom-3 left-3 right-3 text-[var(--text-xs)] text-[var(--text-tertiary)]">
-              Ilustrativa — não é um cliente real.
-            </p>
-          </Reveal>
-          {[1, 2].map((i) => (
-            <Reveal
-              key={i}
-              style={{ transitionDelay: `${i * 80}ms` }}
-              className="flex aspect-[4/5] flex-col items-center justify-center gap-3 rounded-[var(--radius-lg)] border border-dashed border-[var(--border-strong)] bg-[var(--surface-base)] p-6 text-center"
-            >
-              <span className="text-[var(--text-tertiary)]">Depoimento em vídeo — aguardando gravação</span>
-            </Reveal>
+          {previews.map((photo, i) => (
+            <PreviewCard key={photo} photo={photo} delay={i * 80} />
           ))}
         </div>
       </div>
